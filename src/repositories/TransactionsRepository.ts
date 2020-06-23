@@ -25,11 +25,11 @@ class TransactionsRepository {
     return this.transactions
   }
 
-  public getBalance(): Balance {
+  public getBalance(): Balance { // retorna o saldo em conta 
     
     const {income,outcome} = this.transactions.reduce((accumulator:Balance, transaction: Transaction)=>{
 
-      switch(transaction.type){
+      switch(transaction.type){ 
         case "income":
           accumulator.income += transaction.value;
           break;
